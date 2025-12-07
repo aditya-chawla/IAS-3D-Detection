@@ -1,0 +1,9 @@
+{
+  "model": "VoxelNet",
+  "dataset": "nuScenes",
+  "samples": 10,
+  "avg_latency_ms": 12.642407417297363,
+  "avg_fps": 79.09885886384252,
+  "avg_detections": 0.0,
+  "total_time_s": 0.12642407417297363
+}

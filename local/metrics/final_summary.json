@@ -1,0 +1,38 @@
+[
+  {
+    "model": "PointPillars",
+    "dataset": "KITTI",
+    "samples": 10,
+    "avg_latency_ms": 1022.6062059402466,
+    "avg_fps": 0.9778935373079797,
+    "avg_detections": 5.4,
+    "total_time_s": 10.226062059402466
+  },
+  {
+    "model": "VoxelNet",
+    "dataset": "KITTI",
+    "samples": 10,
+    "avg_latency_ms": 43.71993541717529,
+    "avg_fps": 22.872860869029367,
+    "avg_detections": 1.0,
+    "total_time_s": 0.43719935417175293
+  },
+  {
+    "model": "PointPillars",
+    "dataset": "nuScenes",
+    "samples": 10,
+    "avg_latency_ms": 1196.8194723129272,
+    "avg_fps": 0.8355479026986738,
+    "avg_detections": 0.4,
+    "total_time_s": 11.968194723129272
+  },
+  {
+    "model": "VoxelNet",
+    "dataset": "nuScenes",
+    "samples": 10,
+    "avg_latency_ms": 12.642407417297363,
+    "avg_fps": 79.09885886384252,
+    "avg_detections": 0.0,
+    "total_time_s": 0.12642407417297363
+  }
+]

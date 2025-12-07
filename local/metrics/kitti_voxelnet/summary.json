@@ -1,0 +1,9 @@
+{
+  "model": "VoxelNet",
+  "dataset": "KITTI",
+  "samples": 10,
+  "avg_latency_ms": 43.71993541717529,
+  "avg_fps": 22.872860869029367,
+  "avg_detections": 1.0,
+  "total_time_s": 0.43719935417175293
+}

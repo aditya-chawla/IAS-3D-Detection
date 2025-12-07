@@ -1,0 +1,9 @@
+{
+  "model": "PointPillars",
+  "dataset": "KITTI",
+  "samples": 10,
+  "avg_latency_ms": 1022.6062059402466,
+  "avg_fps": 0.9778935373079797,
+  "avg_detections": 5.4,
+  "total_time_s": 10.226062059402466
+}

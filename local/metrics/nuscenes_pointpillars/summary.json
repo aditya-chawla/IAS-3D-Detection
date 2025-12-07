@@ -1,0 +1,9 @@
+{
+  "model": "PointPillars",
+  "dataset": "nuScenes",
+  "samples": 10,
+  "avg_latency_ms": 1196.8194723129272,
+  "avg_fps": 0.8355479026986738,
+  "avg_detections": 0.4,
+  "total_time_s": 11.968194723129272
+}
