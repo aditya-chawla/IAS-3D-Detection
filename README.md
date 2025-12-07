@@ -129,7 +129,7 @@ The voxel-based baseline demonstrated significantly faster runtime compared to t
 ![KITTI – Voxel baseline](local/results/ScreenCapture_2025-12-04-23-45-33.png)
 
 **Fig 2. KITTI – Pillar baseline**  
-![KITTI – Pillar baseline](local/results/kitti-point-pillars -1.png)
+![KITTI – Pillar baseline](local/results/kitti-point-pillars-1.png)
 
 **Fig 3. nuScenes – Voxel baseline**  
 ![nuScenes – Voxel baseline](local/results/nuscences-voxelnet-1.png)
