@@ -123,29 +123,28 @@ The voxel-based baseline demonstrated significantly faster runtime compared to t
 
 #### Phase 1: Local Custom Baseline Performance
 
+#### Phase 1: Local Custom Baseline Performance
 
+**Fig 1. KITTI – Voxel baseline**  
 ![KITTI – Voxel baseline](local/results/ScreenCapture_2025-12-04-23-45-33.png)
 
+**Fig 2. KITTI – Pillar baseline**  
+![KITTI – Pillar baseline](local/results/kitti-point-pillars-1.png)
 
-![KITTI – Pillar baseline](local/results/kitti-point pillars-1.png)
-
-
+**Fig 3. nuScenes – Voxel baseline**  
 ![nuScenes – Voxel baseline](local/results/nuscences-voxelnet-1.png)
 
-
+**Fig 4. nuScenes – Pillar baseline**  
 ![nuScenes – Pillar baseline](local/results/nuscene-2.png)
 
 #### Phase 2: VM Model Performance
 
+**Fig 5. KITTI – PointPillars 3D Detection**  
 ![KITTI – PointPillars 3D Detection](vm/kitti_visualizations/images_boxes/frame_0004.png)
 
-Demo video (PointPillars on KITTI:  
-[▶ Watch kitti_detections_boxes.mp4](vm/kitti_visualizations/images_boxes/kitti_detections_boxes.mp4)
+Demo video (PointPillars on KITTI):  
+[kitti_detections_boxes.mp4](vm/kitti_visualizations/images_boxes/kitti_detections_boxes.mp4)
 
-
-**Phase 2: VM Model Performance**
-
-- Fig: KITTI - PointPillars 3D Detection
 
 ---
 
