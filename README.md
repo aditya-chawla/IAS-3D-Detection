@@ -169,3 +169,64 @@ For future work, the first priority would be to move to a more compatible stackâ
 ## 7. Conclusion
 
 In spite of infrastructure constraints, I produced a complete, well-documented PointPillars pipeline on KITTI, plus partial results for SECOND and nuScenes, alongside interpretable clustering baselines on my local machine when GPU access was not yet available. The experience highlighted that running modern 3D detectors in practice is as much about managing tools, versions, and hardware as it is about understanding the underlying algorithms, and that knowing when to pivot, document limitations, and consolidate reliable results is an important part of doing this kind of work.
+
+---
+
+## 8. Reproducibility
+
+### 8.1 Local Baseline
+
+#### 8.1.1 Environment
+
+conda create -n mmdet3d python=3.10 -y
+conda activate mmdet3d
+pip install numpy scipy scikit-learn open3d opencv-python tqdm matplotlib
+
+#### 8.1.2 Run KITTI
+
+conda activate mmdet3d
+cd IAS-3D-Detection
+python local/run_3d_processing.py --dataset kitti --kitti_root ./data/kitti --output_dir ./local/results --num_samples 50
+
+#### 8.1.3 Run nuScenes
+
+python local/run_3d_processing.py --dataset nuscenes --nuscenes_root ./data/nuscenes --output_dir ./local/results --num_samples 50
+
+#### 8.1.4 Visualize
+
+python local/visualize_3d_results.py
+
+### 8.2 Lab VM
+#### 8.1.1 Environment
+Create and activate conda env
+conda create -n hw3_ac python=3.10 -y
+conda activate hw3_ac
+
+Install PyTorch + CUDA (version used on the VM)
+pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu126
+
+Clone MMDetection3D and sub-dependencies
+git clone https://github.com/open-mmlab/mmdetection3d.git
+cd mmdetection3d
+
+Install MMDetection3D and dependencies
+pip install -U pip
+pip install -v -e .[all]
+
+(If needed) install numba and spconv
+pip install numba
+pip install spconv-cu126
+
+Patch checkpoint loading (PyTorch 2.6)
+Open mmengine/runner/checkpoint.py and change the torch.load call to:
+checkpoint = torch.load(filename, map_location=map_location, weights_only=False)
+
+#### 8.1.2 Run data preparation (KITTI)
+mkdir -p data/kitti
+python tools/create_data.py kitti --root-path ./data/kitti --out-dir ./data/kitti --extra-tag kitti
+
+#### 8.1.3 Run PointPillars inference on KITTI
+python tools/test.py vm/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class_fixed.py checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-3class_20220301_150306-37dc2420.pth --show --show-dir work_dirs/kitti_visualizations --eval None
+
+#### 8.1.4 Run SECOND inference on KITTI (no eval)
+python tools/test.py vm/second_kitti_fixed.py checkpoints/second_hv_secfpn_8xb6-80e_kitti-3d-3class-b086d0a3.pth --show --show-dir work_dirs/second_kitti_results --eval None
